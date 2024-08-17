@@ -39,7 +39,7 @@ const LoginPage = () => {
       localStorage.setItem("user-threads", JSON.stringify(data.data.user));
       setUser(data.data.user); // Corrected to match the data structure
       // window.location.reload();
-      // navigate("/"); // Navigate to the homepage
+      navigate("/"); // Navigate to the homepage
     } catch (error) {
       console.log("login page error", error);
     } finally {
