@@ -38,8 +38,8 @@ const LoginPage = () => {
       console.log(data);
       localStorage.setItem("user-threads", JSON.stringify(data.data.user));
       setUser(data.data.user); // Corrected to match the data structure
-      window.location.reload();
-      navigate("/"); // Navigate to the homepage
+      // window.location.reload();
+      // navigate("/"); // Navigate to the homepage
     } catch (error) {
       console.log("login page error", error);
     } finally {
@@ -59,6 +59,7 @@ const LoginPage = () => {
     >
       <form
         style={{ display: "flex", flexDirection: "column", width: "300px" }}
+        onSubmit={handleLogin} // Attach the handleLogin function to form's onSubmit
       >
         <label style={{ marginBottom: "10px" }}>Email :</label>
         <input
@@ -97,7 +98,7 @@ const LoginPage = () => {
           }}
         ></input>
         <button
-          onClick={handleLogin}
+          type="submit"
           style={{
             padding: "10px",
             backgroundColor: "#28a745",
